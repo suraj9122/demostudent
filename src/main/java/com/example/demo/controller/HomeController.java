@@ -6,11 +6,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class HomeController {
 	
-	@RequestMapping("/home")
+	@RequestMapping("/homme")
 	public String home()
 	{
 		
-		return"redirect:/home";
+		System.out.println("0");
+		return"home.html";
 	}
 
 }
