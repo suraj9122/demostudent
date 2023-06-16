@@ -10,7 +10,7 @@ public class HomeController {
 	public String home()
 	{
 		
-		return"redirect:/home.html";
+		return"redirect:/home";
 	}
 
 }
