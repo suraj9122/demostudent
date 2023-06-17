@@ -6,12 +6,28 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class HomeController {
 	
-	@RequestMapping("/homme")
+	@RequestMapping("/home")
 	public String home()
 	{
 		
-		System.out.println("0");
+		
 		return"home.html";
 	}
+	
+	@RequestMapping("/register")
+	public String register()
+	{
+		
+		
+		return"register.html";
+	}
+	@RequestMapping("/userdata")
+	public String userdata()
+	{
+		
+		
+		return"userdata.html";
+	}
+	
 
 }
