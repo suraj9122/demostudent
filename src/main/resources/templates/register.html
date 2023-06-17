@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>User Registration</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+    
+    h1 {
+      margin-top: 50px;
+    }
+    
+    .container {
+      margin-top: 50px;
+    }
+    
+    input[type="text"],
+    input[type="email"] {
+      padding: 10px;
+      width: 300px;
+      margin-bottom: 10px;
+    }
+    
+    select {
+      padding: 10px;
+      width: 300px;
+      margin-bottom: 10px;
+    }
+    
+    input[type="submit"] {
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>User Registration</h1>
+  
+  <div class="container">
+    <form action="" method="post">
+      <input type="text" name="name" placeholder="Name" required><br>
+      <input type="text" name="address" placeholder="Address" required><br>
+      <input type="text" name="contact" placeholder="Contact" required><br>
+      <input type="email" name="email" placeholder="Email" required><br>
+      <select name="course" required>
+        <option value="" selected disabled>Select Course</option>
+        <option value="course1">Course 1</option>
+        <option value="course2">Course 2</option>
+        <option value="course3">Course 3</option>
+      </select><br>
+      <input type="submit" value="Register">
+    </form>
+  </div>
+</body>
+</html>
