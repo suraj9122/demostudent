@@ -1,10 +1,19 @@
 package com.example.demo.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.example.demo.model.UserDetails;
+import com.example.demo.service.UserService;
 
 @Controller
 public class HomeController {
+	
+	@Autowired
+	private UserService userService;
 	
 	@RequestMapping("/home")
 	public String home()
@@ -29,5 +38,13 @@ public class HomeController {
 		return"userdata.html";
 	}
 	
+	@PostMapping("/createuser")
+	public String createuser(@ModelAttribute UserDetails user )
+	{
+		
+		System.out.println(user);
+		userService.createUser(user);
+		return"register.html";
+	}
 
 }

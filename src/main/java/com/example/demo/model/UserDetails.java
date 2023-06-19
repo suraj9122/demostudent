@@ -16,7 +16,7 @@ public class UserDetails {
 	private String name;
 	private String address;
 	private String contact;
-	private String mail;
+	private String email;
 	private String course;
 
 }
