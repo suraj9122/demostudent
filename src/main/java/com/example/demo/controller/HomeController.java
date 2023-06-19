@@ -18,7 +18,7 @@ public class HomeController {
 	private UserService userService;
 	
 	@RequestMapping("/home")
-	public String home()
+	public String home(@ModelAttribute("user")UserDetails user)
 	{
 		
 		
@@ -42,14 +42,14 @@ public class HomeController {
 	}
 	
 	@PostMapping("/createuser")
-	public String createuser(@RequestParam("name")  String nm,@RequestParam("address")  String ad,@RequestParam("contact")  String ct,@RequestParam("email")  String em,@RequestParam("course")  String c)
+	public String createuser(@ModelAttribute("user")UserDetails user)
 	{
-		
-		System.out.println(nm);
-		System.out.println(ad);
-		System.out.println(ct);
-		System.out.println(em);
-		System.out.println(c);
+		//@RequestParam("name")  String nm,@RequestParam("address")  String ad,@RequestParam("contact")  String ct,@RequestParam("email")  String em,@RequestParam("course")  String c
+		//System.out.println(nm);
+	//	System.out.println(ad);
+	//	System.out.println(ct);
+   //System.out.println(em);
+	System.out.println(user);
 		
 		return"home.html";
 	}
