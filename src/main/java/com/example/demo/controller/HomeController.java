@@ -18,7 +18,7 @@ public class HomeController {
 	private UserService userService;
 	
 	@RequestMapping("/home")
-	public String home(@ModelAttribute("user")UserDetails user)
+	public String home()
 	{
 		
 		
@@ -50,7 +50,7 @@ public class HomeController {
 	//	System.out.println(ct);
    //System.out.println(em);
 	System.out.println(user);
-		
+		userService.createUser(user);
 		return"home.html";
 	}
 
