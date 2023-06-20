@@ -5,4 +5,5 @@ import com.example.demo.model.UserDetails;
 public interface UserService  {
 	public UserDetails createUser(UserDetails users);
 
+public boolean checkEmail(String email);
 }

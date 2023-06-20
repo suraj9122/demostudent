@@ -15,5 +15,11 @@ public class UserServiceImpl implements UserService {
 		// TODO Auto-generated method stub
 		return userRepo.save(user);
 	}
+	@Override
+	public boolean checkEmail(String email) {
+		// TODO Auto-generated method stub
+		return userRepo.existsByEmail(email);
+	}
+
 
 }

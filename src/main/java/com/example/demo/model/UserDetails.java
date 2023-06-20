@@ -16,11 +16,7 @@ public class UserDetails {
 	private String name;
 	private String address;
 	private String contact;
-	@Override
-	public String toString() {
-		return "UserDetails [id=" + id + ", name=" + name + ", address=" + address + ", contact=" + contact + ", email="
-				+ email + ", course=" + course + "]";
-	}
+	private String password;	
 	private String email;
 	private String course;
 	public int getId() {
@@ -60,5 +56,17 @@ public class UserDetails {
 		this.course = course;
 	}
 	
-
+	
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	@Override
+	public String toString() {
+		return "UserDetails [id=" + id + ", name=" + name + ", address=" + address + ", contact=" + contact
+				+ ", password=" + password + ", email=" + email + ", course=" + course + "]";
+	}
+	
 }

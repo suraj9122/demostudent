@@ -1,5 +1,7 @@
 package com.example.demo.controller;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -41,17 +43,34 @@ public class HomeController {
 		return"userdata.html";
 	}
 	
-	@PostMapping("/createuser")
-	public String createuser(@ModelAttribute("user")UserDetails user)
+	
+	@RequestMapping("/createuser")
+	public String createuser(@ModelAttribute ("user")UserDetails user,HttpSession session)
 	{
 		//@RequestParam("name")  String nm,@RequestParam("address")  String ad,@RequestParam("contact")  String ct,@RequestParam("email")  String em,@RequestParam("course")  String c
 		//System.out.println(nm);
 	//	System.out.println(ad);
 	//	System.out.println(ct);
    //System.out.println(em);
-	System.out.println(user);
-		userService.createUser(user);
-		return"home.html";
+		
+		boolean f=userService.checkEmail(user.getEmail());
+		
+	
+		if (f)
+		{
+			session.setAttribute("msg", "email id already exit");
+		}
+		else
+		{
+		UserDetails use=userService.createUser(user);
+		if(use!=null) {
+		session.setAttribute("msg", "registered successfully");}
+		else {
+			session.setAttribute("msg","something wrong on server");
+		}
+		}
+		
+		return"redirect:/register";
 	}
 
 }
