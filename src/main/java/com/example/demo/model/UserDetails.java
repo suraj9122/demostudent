@@ -19,6 +19,7 @@ public class UserDetails {
 	private String password;	
 	private String email;
 	private String course;
+	private String role;
 	public int getId() {
 		return id;
 	}
@@ -63,10 +64,18 @@ public class UserDetails {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+	
+	public String getRole() {
+		return role;
+	}
+	public void setRole(String role) {
+		this.role = role;
+	}
 	@Override
 	public String toString() {
 		return "UserDetails [id=" + id + ", name=" + name + ", address=" + address + ", contact=" + contact
-				+ ", password=" + password + ", email=" + email + ", course=" + course + "]";
+				+ ", password=" + password + ", email=" + email + ", course=" + course + ", role=" + role + "]";
 	}
+	
 	
 }
