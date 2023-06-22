@@ -17,17 +17,17 @@
 					<div class="card">
 						<div class="card-header text-center fs-4">Login Page</div>
 
-						<div th:if="${param.error}" class="alert alert-danger">
+						<div th:block th:if="${session.msg}" class="alert alert-danger">
 							Invalid username & Password</div>
 
 						<div th:if="${param.logout}" class="alert alert-success">
 							Logout Sucessfully</div>
 
 						<div class="card-body">
-							<form action="/login" method="post">
+							<form action="userdata" method="post">
 
 								<div class="mb-3">
-									<label>Enter Email</label> <input type="text" name="username"
+									<label>Enter ID</label> <input type="text" name="id"
 										class="form-control">
 								</div>
 

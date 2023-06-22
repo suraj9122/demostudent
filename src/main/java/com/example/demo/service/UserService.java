@@ -6,4 +6,8 @@ public interface UserService  {
 	public UserDetails createUser(UserDetails users);
 
 public boolean checkEmail(String email);
+
+
+
+UserDetails fetchuser(Integer id);
 }

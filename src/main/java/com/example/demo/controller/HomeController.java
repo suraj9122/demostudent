@@ -35,12 +35,25 @@ public class HomeController {
 		return"register.html";
 	}
 	@RequestMapping("/userdata")
-	public String userdata( )
+	public String userdata(@RequestParam("id")  int id,@RequestParam("password")  String pw,HttpSession session)
 	
 	{
-		
-		
-		return"userdata.html";
+	 
+		UserDetails use=userService.fetchuser(id);
+		 session.setAttribute("a", use);
+		if(id==use.getId())
+		{
+			if(pw.equals(use.getPassword()))
+			{
+			
+				
+			}
+			else
+				session.setAttribute("msg", "password wrong");
+		}
+		else
+			session.setAttribute("msg", "id wrong");
+		return "userdata";	
 	}
 	
 	

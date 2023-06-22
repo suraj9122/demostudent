@@ -11,7 +11,6 @@ import javax.persistence.Id;
 @Entity
 public class UserDetails {
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
 	private String name;
 	private String address;
@@ -19,7 +18,6 @@ public class UserDetails {
 	private String password;	
 	private String email;
 	private String course;
-	private String role;
 	public int getId() {
 		return id;
 	}
@@ -64,18 +62,10 @@ public class UserDetails {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	
-	public String getRole() {
-		return role;
-	}
-	public void setRole(String role) {
-		this.role = role;
-	}
 	@Override
 	public String toString() {
 		return "UserDetails [id=" + id + ", name=" + name + ", address=" + address + ", contact=" + contact
-				+ ", password=" + password + ", email=" + email + ", course=" + course + ", role=" + role + "]";
+				+ ", password=" + password + ", email=" + email + ", course=" + course + "]";
 	}
-	
 	
 }

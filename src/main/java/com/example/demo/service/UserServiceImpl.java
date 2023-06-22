@@ -20,6 +20,12 @@ public class UserServiceImpl implements UserService {
 		// TODO Auto-generated method stub
 		return userRepo.existsByEmail(email);
 	}
+	@Override
+	public UserDetails fetchuser(Integer id) {
+		// TODO Auto-generated method stub
+		return userRepo.getById(id);
+	}
+	
 
 
 }
