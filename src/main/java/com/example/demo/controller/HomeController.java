@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.example.demo.model.UserDetails;
 import com.example.demo.service.UserService;
@@ -35,13 +36,20 @@ public class HomeController {
 		return"register.html";
 	}
 	@RequestMapping("/userdata")
-	public String userdata(@RequestParam("id")  int id,@RequestParam("password")  String pw,HttpSession session)
+	public String userdata(@RequestParam("id")  int id,@RequestParam("password")  String pw,Model m)
 	
 	{
-	 
+		
+		String username = "John Doe";
+       // m.addAttribute("username", username);
+	// ModelAndView model=new ModelAndView("userdata.html");
 		UserDetails use=userService.fetchuser(id);
-		 session.setAttribute("a", use);
-		if(id==use.getId())
+		m.addAttribute("use",use);
+		 //model.addObject("use",use);
+		
+		//session.setAttribute("msg","something wrong on server");
+		// System.out.print(model);
+		/*if(id==use.getId())
 		{
 			if(pw.equals(use.getPassword()))
 			{
@@ -49,14 +57,14 @@ public class HomeController {
 				
 			}
 			else
-				session.setAttribute("msg", "password wrong");
+				model.addAttribute(pw, use)
 		}
 		else
 			session.setAttribute("msg", "id wrong");
-		return "userdata";	
+		
+	}*/
+		 return "userdata";
 	}
-	
-	
 	@RequestMapping("/createuser")
 	public String createuser(@ModelAttribute ("user")UserDetails user,HttpSession session)
 	{

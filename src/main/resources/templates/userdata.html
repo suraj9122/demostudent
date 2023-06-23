@@ -1,14 +1,105 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
+     <meta charset="UTF-8">
+    <title>CSS Table Example</title>
+    <style>
+        /* CSS styles for the table */
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+         /* CSS styles for the forms */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+
+        .form-container {
+            width: 300px;
+            margin: 20px auto;
+            background-color: #ffffff;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-container h2 {
+            margin-top: 0;
+        }
+
+        .form-container button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin-top: 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            text-align: center;
+            text-decoration: none;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .form-container button:hover {
+            background-color: #45a049;
+        }
+    </style>
 </head>
 <body>
-${a}
+    <h1>Welcome, <span th:text="${use.name}"></span>!</h1>
+    
+ <table>
+        <tbody>
+            <tr>
+             <td th:text="${use.email}"></td></tr>
+               
+                <tr><td th:text="${use.id}"><td></tr>
+                
+                <tr><td th:text="${use.password}"></td></tr>
+                
+                <tr><td th:text="${use.contact}"></td></tr>
+                <tr><td th:text="${use.address}"></td></tr>
+            
+        </tbody>
+        
+    </table>
+    <div class="form-container">
+        <form  action="/update" method="POST">
+            <!-- Form 1 -->
 
-<th:block th:if="${session.use}">
+            <!-- Add your form fields here -->
+            <button type="submit">update</button>
+        </form>
+    </div>
 
+    <div class="form-container">
+        <form id="form2" action="addcourse" method="POST">
+            
+            <!-- Add your form fields here -->
+            <button type="submit">Addcourse</button>
+        </form>
+    </div>
 
+    <div class="form-container">
+        <form id="form3" action="/form3-action" method="POST">
+            <!-- Form 3 -->
+            
+            <!-- Add your form fields here -->
+            <button type="submit"> Graduation</button>
+        </form>
+    </div>
+    
+    
 </body>
 </html>
