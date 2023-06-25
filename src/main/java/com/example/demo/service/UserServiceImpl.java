@@ -25,6 +25,11 @@ public class UserServiceImpl implements UserService {
 		// TODO Auto-generated method stub
 		return userRepo.getById(id);
 	}
+	@Override
+	public Boolean Update(UserDetails user) {
+		userRepo.save(user);
+		return true;
+	}
 	
 
 

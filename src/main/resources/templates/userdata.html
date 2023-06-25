@@ -70,10 +70,12 @@
                 
                 <tr><td th:text="${use.contact}"></td></tr>
                 <tr><td th:text="${use.address}"></td></tr>
+                
             
         </tbody>
         
     </table>
+    
     <div class="form-container">
         <form  action="/update" method="POST">
             <!-- Form 1 -->
@@ -84,7 +86,7 @@
     </div>
 
     <div class="form-container">
-        <form id="form2" action="addcourse" method="POST">
+        <form id="form2" action="course" method="POST">
             
             <!-- Add your form fields here -->
             <button type="submit">Addcourse</button>
@@ -96,7 +98,7 @@
             <!-- Form 3 -->
             
             <!-- Add your form fields here -->
-            <button type="submit"> Graduation</button>
+            <button href="graduation"type="submit"> Graduation</button>
         </form>
     </div>
     

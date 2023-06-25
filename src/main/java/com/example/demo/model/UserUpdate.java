@@ -1,28 +1,19 @@
 package com.example.demo.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+public class UserUpdate {
 
 
-
-
-@Entity
-public class UserDetails {
-	@Id
-	private int id;
+	private String course;
 	private String name;
 	private String address;
 	private String contact;
 	private String password;	
 	private String email;
-	private String courseid;
-	public int getId() {
-		return id;
+	public String getCourse() {
+		return course;
 	}
-	public void setId(int id) {
-		this.id = id;
+	public void setCourse(String course) {
+		this.course = course;
 	}
 	public String getName() {
 		return name;
@@ -54,16 +45,10 @@ public class UserDetails {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public String getCourseid() {
-		return courseid;
-	}
-	public void setCourseid(String courseid) {
-		this.courseid = courseid;
-	}
 	@Override
 	public String toString() {
-		return "UserDetails [id=" + id + ", name=" + name + ", address=" + address + ", contact=" + contact
-				+ ", password=" + password + ", email=" + email + ", courseid=" + courseid + "]";
+		return "UserUpdate [course=" + course + ", name=" + name + ", address=" + address + ", contact=" + contact
+				+ ", password=" + password + ", email=" + email + "]";
 	}
 	
 }

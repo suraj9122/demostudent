@@ -1,38 +1,60 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <style>
-        body {
-            text-align: center;
-        }
-
-        h1 {
-            font-size: 24px;
-            color: red;
-        }
-
-        h2 {
-            font-size: 18px;
-            font-weight: bold;
-            margin-bottom: 20px;
-        }
-
-        .return-button {
-            background-color: green;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            font-size: 16px;
-            cursor: pointer;
-        }
-    </style>
+  <style>
+    body {
+      background-color: #f2f2f2;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      text-align: center;
+    }
+    
+    h2 {
+      color: #ff0000;
+      margin-top: 50px;
+    }
+    
+    .error-message {
+      margin-bottom: 20px;
+    }
+    
+    .button-container {
+      display: flex;
+      justify-content: center;
+    }
+    
+    .button-container button {
+      background-color: #4caf50;
+      color: #ffffff;
+      border: none;
+      padding: 10px 20px;
+      margin: 0 10px;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+    
+    .button-container button:hover {
+      background-color: #45a049;
+    }
+  </style>
 </head>
 <body>
-<form action="home">
-    <h1>Something Went Wrong</h1>
-    <h2>Oops! An error occurred.</h2>
-    <button class="return-button">Return to Home</button>
-    </form>
+  <div class="container">
+    <h2>Error Message</h2>
+    <div class="error-message">
+      <p>Something went wrong. Please try again.</p>
+    </div>
+    <div class="button-container">
+      <button onclick="location.href='home'">Return to Home Page</button>
+      <button onclick="location.href='register'">Go to Register Page</button>
+    </div>
+  </div>
 </body>
 </html>
