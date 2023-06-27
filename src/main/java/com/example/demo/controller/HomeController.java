@@ -50,10 +50,11 @@ public class HomeController {
 		return mv;
 	}
 	@RequestMapping("/userdata")
+	
 	public ModelAndView userdata(@RequestParam("id")  int id,@RequestParam("password")  String pw,Model m)
 	
 	{
-		
+		System.out.println("hello");
 		String msg ="";
       
 	ModelAndView mv=new  ModelAndView();

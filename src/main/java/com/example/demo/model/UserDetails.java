@@ -1,9 +1,14 @@
 package com.example.demo.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 
 
 
@@ -18,6 +23,17 @@ public class UserDetails {
 	private String password;	
 	private String email;
 	private String courseid;
+	
+	
+	@ManyToMany(mappedBy="user",cascade=CascadeType.ALL)
+	
+	private List<Course> course=new ArrayList<>();
+	public List<Course> getCourse() {
+		return course;
+	}
+	public void setCourse(List<Course> course) {
+		this.course = course;
+	}
 	public int getId() {
 		return id;
 	}
@@ -64,6 +80,10 @@ public class UserDetails {
 	public String toString() {
 		return "UserDetails [id=" + id + ", name=" + name + ", address=" + address + ", contact=" + contact
 				+ ", password=" + password + ", email=" + email + ", courseid=" + courseid + "]";
+	}
+	public UserDetails orElse(Object object) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
 }
