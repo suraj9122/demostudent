@@ -1,7 +1,7 @@
 package com.example.demo.controller;
 
-import com.cms.studentportal.constant.Endpoint;
-import com.cms.studentportal.domain.Course;
+import com.example.constant.Endpoint;
+import com.example.domain.Course;
 import com.cms.studentportal.exception.CourseNotFoundException;
 import com.cms.studentportal.exception.UserAlreadyEnrollIntoCourseException;
 import com.cms.studentportal.service.CourseServiceIfc;
